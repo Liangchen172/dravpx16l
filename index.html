@@ -19,10 +19,10 @@
             gesture-detector
         >
             <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.glb"
-                ></a-asset-item>
+                <!-- 第一个模型 -->
+                <a-asset-item id="animated-asset" src="assets/asset.glb"></a-asset-item>
+                <!-- 第二个模型 -->
+                <a-asset-item id="second-animated-asset" src="assets/second-asset.glb"></a-asset-item>
             </a-assets>
 
             <a-marker
@@ -33,19 +33,21 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
             >
+                <!-- 第一个模型 -->
                 <a-entity
                     id="bowser-model"
-                    scale="0.07812708854670604 0.07812708854670604 0.07812708854670604"
+                    scale="0.078 0.078 0.078"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
+
+                <!-- 第二个模型 -->
                 <a-entity
-                    id="second"
-                    position="0.07812708854670604 0.07812708854670604 0.07812708854670604"
+                    id="second-model"
+                    position="0.5 0 0" <!-- 放置在右侧 -->
                     scale="0.05 0.05 0.05"
                     animation-mixer="loop: repeat"
                     gltf-model="#second-animated-asset"
